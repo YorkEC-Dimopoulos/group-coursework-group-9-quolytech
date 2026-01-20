@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajan Marinaj | QuolyTech</title>
+    <style>
+        
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Courier New',monospace;background:#0d1117;color:#c9d1d9;line-height:1.6;padding:20px;max-width:800px;margin:auto}
+        
+ 
+        header{text-align:center;padding:40px 0;border-bottom:1px solid #30363d;margin-bottom:40px}
+        h1{font-size:2.5rem;color:#fff;
+            margin-bottom:10px}
+        .role{color:#58a6ff;font-size:1.2rem;
+            margin-bottom:20px}
+    
+        .content-box{background:#161b22;border:1px solid #30363d;padding:25px;border-radius:10px;margin-bottom:30px}
+        h2{color:#58a6ff;margin-bottom:15px;padding-bottom:10px;border-bottom:1px solid #30363d}
+        p{margin-bottom:15px}
+        ul{list-style:none;padding-left:20px}
+        li{margin-bottom:8px;position:relative;padding-left:15px}
+        li::before{content:"▸";color:#58a6ff;
+        position:absolute;left:0}
+        
+       
+        .profile-img{width:180px;height:180px;background:#161b22;
+            border-radius:50%;margin:0 auto 25px;display:flex;align-items:center;justify-content:center;color:#8b949e;border:3px solid #30363d;font-size:14px}
+       
+     
+        .tech-stack{display:flex;flex-wrap:wrap;gap:10px;margin-top:15px}
+        .tech-item{background:#0d1117;color:#58a6ff;
+            padding:8px 15px;border-radius:5px;border:1px solid #30363d;font-size:0.9rem}
+        
+        /* footer hits */
+        footer{margin-top:40px;padding-top:20px;border-top:1px solid #30363d;text-align:center;color:#8b949e;font-size:0.9rem}
+    </style>
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <h1>Rajan Marinaj</h1>
+        <div class="role">Contributor & Researcher | QuolyTech</div>
+        <p>Bridging frontend beauty with backend logic</p>
+    </header>
+
+    <!-- profile section -->
+    <div class="content-box">
+        <img src="../images/rajan.jpeg" alt="Rajan" style="width:180px;height:180px;object-fit:cover;border-radius:50%;">
+            
+            Rajan's Profile
+            
+        </div>
+        
+        <p>Hey, I'm Rajan. I work on both frontend and backend for our QuolyTech project. I enjoy solving complex problems and building systems that scale well.</p>
+    </div>
+
+    <!-- main content -->
+    <div class="content-box">
+        <h2>My Role in The Project</h2>
+        <p><strong>Contributor & Researcher</strong></p>
+        <p>I focused mainly on historical research for the project, with an emphasis on Ancient Greece. I gathered, reviewed, and verified information to ensure accuracy and reliability of the content presented on the website.</p>
+        
+        <p>I also worked with HTML to help structure the content in a clear and organized way, making sure the research was easy to read and well presented. In addition, I collaborated with the team by sharing sources, reviewing content, and supporting the overall development process.</p>
+        
+        <p>My contribution helped strengthen the accuracy and educational value of the project.</p>
+        
+        <h2>What I'm Working On</h2>
+        <ul>
+            <li>Developing API endpoints and ensuring they work with Panagiot's frontend</li>
+            <li>Database optimization and query efficiency</li>
+            <li>Implementing user authentication and authorization</li>
+            <li>Code review and ensuring best practices across the stack</li>
+            <li>Deployment and DevOps tasks</li>
+        </ul>
+        
+        <h2>Tech Stack</h2>
+        <div class="tech-stack">
+            <span class="tech-item">HTML</span>
+            <span class="tech-item">CSS</span>
+            <span class="tech-item">JAVASCRIPT</span>
+           
+        </div>
+    </div>
+
+    <!-- contact info -->
+    <div class="content-box">
+        <h2>Contact & Links</h2>
+        <ul>
+            <li>-</li>
+            <li>-</li>
+            <li>-</li>
+        </ul>
+    </div>
+
+    <!-- footer -->
+    <footer>
+        <p>first year coumputer science thats it </p>
+    </footer>
+
+    <script>
+        // simple interactions for the dark theme
+        const techItems = document.querySelectorAll('.tech-item');
+        techItems.forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px)';
+                this.style.boxShadow = '0 5px 10px rgba(0, 0, 0, 0.3)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+        
+        // page load effect
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+    </script>
+</body>
+</html>

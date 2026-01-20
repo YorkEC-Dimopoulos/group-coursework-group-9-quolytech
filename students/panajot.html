@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panagiot Tsipi | JS Dev(thats what said oresti to write and it felt cool)</title>
+    <style>
+        /* Clean dark theme - no clutter */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0a0a14;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+        
+        /* Header - minimal */
+        .header {
+            text-align: center;
+            padding: 40px 0;
+            position: relative;
+        }
+        
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #4dccbd, transparent);
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            background: linear-gradient(135deg, #4dccbd, #7a5fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 5px;
+            font-weight: 300;
+        }
+        
+        .tagline {
+            color: #888;
+            font-size: 1rem;
+            margin: 5px 0;
+        }
+        
+        /* Image section - for that professional pic */
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            margin: 25px auto;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4dccbd, #7a5fff);
+            padding: 5px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .image-placeholder {
+            width: 100%;
+            height: 100%;
+            background: #1a1a2e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-size: 0.9rem;
+        }
+        
+        /* Cards - simple */
+        .card {
+            background: rgba(18, 18, 28, 0.6);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        h2 {
+            color: #7a5fff;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            color: #ccc;
+        }
+        
+        /* Skills - grid vibes */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .skill {
+            background: rgba(77, 204, 189, 0.1);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        /* Work highlights */
+        .highlight {
+            margin: 20px 0;
+            padding-left: 15px;
+            border-left: 2px solid #7a5fff;
+        }
+        
+        /* Footer - tiny */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: #666;
+            font-size: 0.8rem;
+        }
+        
+        /* Responsive cuz duh */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            .card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Panagiot Tsipi</h1>
+            <div class="tagline">Contributor & JavaScript Developer</div>
+            <div class="tagline">Making websites actually do stuff</div>
+            
+ <!-- Image section - put your pic here -->
+<div class="profile-image">
+    <img src="../images/panajot.jpeg" alt="Panagiot Tsipi" style="width:100%;height:100%;object-fit:cover;">
+</div>
+        </header>
+        
+        <main>
+            <section class="card">
+                <h2>What I Do</h2>
+                <p>I was mainly responsible for the JavaScript development of the project. I worked on implementing functionality, interactivity, and dynamic behavior across different sections of the website, with a primary focus on the Ancient Egypt section.</p>
+                <p>I wrote, tested, and improved JavaScript code to ensure smooth user interactions and reliable functionality. I also collaborated closely with the rest of the team, helping review logic, fix issues, and integrate scripts effectively with the HTML and CSS structure of the site.</p>
+                <p>My work contributed to making the website interactive, responsive, and engaging for users.</p>
+            </section>
+            
+            <section class="card">
+                <h2>My Stack</h2>
+                <div class="skills">
+                    <div class="skill">JavaScript</div>
+                    <div class="skill">HTML5 & CSS3</div>
+                    <div class="skill">-</div>
+                    <div class="skill">-</div>
+                    <div class="skill">-</div>
+                    <div class="skill">-</div>
+                </div>
+            </section>
+            
+            <section class="card">
+                <h2>Project Work</h2>
+                <div class="highlight">
+                    <p><strong>Ancient Egypt Section</strong> - Built the entire interactive experience</p>
+                </div>
+                <div class="highlight">
+                    <p><strong>Functionality Implementation</strong> - Made things actually work</p>
+                </div>
+                <div class="highlight">
+                    <p><strong>Team Collaboration</strong> - Fixed code without too much complaining</p>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>Panagiot Tsipi • JavaScript Developer (I Wrote this for flex after I Print Hello World)</p>
+            <p style="margin-top: 10px; color: #555;">HTML/CSS/JS For first time </p>
+        </footer>
+    </div>
+
+    <script>
+        // Minimal JS for a JS dev
+        console.log("Page loaded - no React, no problem");
+        
+        // Simple image placeholder click
+        const placeholder = document.querySelector('.image-placeholder');
+        if(placeholder) {
+            placeholder.addEventListener('click', () => {
+                placeholder.innerHTML = '👉 Add your pic in HTML';
+                setTimeout(() => {
+                    placeholder.innerHTML = 'Add your image here';
+                }, 1500);
+            });
+        }
+        
+        // Skills hover effect
+        document.querySelectorAll('.skill').forEach(skill => {
+            skill.addEventListener('mouseenter', () => {
+                skill.style.transform = 'translateY(-2px)';
+            });
+            skill.addEventListener('mouseleave', () => {
+                skill.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>

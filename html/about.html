@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ages Unveiled - About Us</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com  ">
+    <link rel="preconnect" href="https://fonts.gstatic.com  " crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400  ;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css  ">
+</head>
+<body>
+    <!-- loading screen bc we love suspense -->
+<div class="loading-screen">
+    <div class="artifacts-container">
+        <div class="artifact">𓀀</div>
+        <div class="artifact">𓃀</div>
+        <div class="artifact">𓏏</div>
+        <div class="artifact">𓍯</div>
+        <div class="artifact">𓇯</div>
+        <div class="artifact">𓆓</div>
+    </div>
+    <div class="loading-container">
+        <div class="logo-container">
+            <img src="https://york.citycollege.eu/m/templates_mobile/mobile_city_2016/images/logo_city_mobile.png  " 
+                 alt="York City College Logo" 
+                 class="college-logo"
+                 onerror="this.style.display='none'">
+            <div class="title-wrapper">
+                <h1 class="project-title">Ages Unveiled</h1>
+            </div>
+            <div class="symbol-container">
+                <div class="ancient-symbol">✕</div>
+            </div>
+            <p class="project-subtitle">Journey Through Ancient Civilizations</p>
+        </div>
+        <div class="pyramid-loader">
+            <div class="pyramid">
+                <div class="side side1"></div>
+                <div class="side side2"></div>
+                <div class="side side3"></div>
+                <div class="side side4"></div>
+                <div class="base"></div>
+            </div>
+        </div>
+        <div class="loading-text-container">
+            <div class="loading-text">
+                <span>𓀀</span> Preparing historical content<span class="loading-dots">
+                    <span>.</span>
+                    <span>.</span>
+                    <span>.</span>
+                </span>
+            </div>
+        </div>
+        <div class="loading-progress">
+            <div class="loading-progress-bar"></div>
+        </div>
+        <div class="loading-quote">
+            Understanding the past to shape the future
+        </div>
+    </div>
+</div>
+
+<!-- nav that actually works -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="../index.html" class="logo">Ages Unveiled</a>
+        <div class="nav-links">
+            <a href="../index.html" class="active">Home</a>
+            <div class="dropdown">
+                <a href="#" class="dropdown-toggle">Civilizations <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown-menu">
+                    <a href="egypt.html">Ancient Egypt</a>
+                    <a href="greece.html">Ancient Greece</a>
+                    <a href="illyrians.html">Illyrians</a>
+                    <a href="rome.html">Ancient Rome</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#" class="dropdown-toggle">Modern Relevance <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown-menu">
+                    <a href="egypt-modern.html">Egypt Today</a>
+                    <a href="greece-modern.html">Greece Today</a>
+                    <a href="illyrians-modern.html">Illyrian Legacy</a>
+                    <a href="rome-modern.html">Rome Today</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#" class="dropdown-toggle">Global Impact <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown-menu">
+                    <a href="egypt-impact.html">Egypt's Impact</a>
+                    <a href="greece-impact.html">Greece's Impact</a>
+                    <a href="illyrians-impact.html">Illyrians' Impact</a>
+                    <a href="rome-impact.html">Rome's Impact</a>
+                </div>
+            </div>
+            <a href="about.html">About Us</a>
+        </div>
+        <button class="menu-btn" id="menuBtn">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</nav>
+
+<!-- dramatic hero bc why not -->
+<section class="civilization-hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/about-img.jpg');">
+    <div class="container">
+        <h1 class="civilization-title">About Our Team</h1>
+        <p class="civilization-period">QuolyTech Group</p>
+        <p class="civilization-desc">Meet the contributors behind Ages Unveiled</p>
+    </div>
+</section>
+
+<!-- we had vibes, now we have a mission -->
+<section class="about-project" style="padding: 5rem 0;">
+    <div class="container">
+        <h2 class="section-title">Our Mission</h2>
+        <div class="about-content">
+            <p>
+                Ages Unveiled is an educational group project created to present ancient civilizations
+                through modern web technologies in an engaging and accessible way.
+            </p>
+            <p>
+                As students at York City College, we collaborated closely, combining historical research
+                with frontend development to ensure both accuracy and a strong user experience.
+            </p>
+            <p>
+                This project highlights how teamwork and technology can bring history to life
+                for modern audiences.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- crew reveal -->
+<section class="team-section" style="padding: 5rem 0; background-color: rgba(42, 157, 143, 0.1);">
+    <div class="container">
+        <h2 class="section-title">Meet The Team</h2>
+        <p class="section-subtitle">Project Contributors</p>
+        <div class="team-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem;">
+
+            <!-- oresti card -->
+            <a href="../students/oresti vojka.html">
+            <div class="team-card" style="background-color: var(--gray-color); border-radius: 10px; padding: 2rem; text-align: center; transition: var(--transition);">
+                <div class="team-avatar" style="width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-user" style="font-size: 3rem; color: white;"></i>
+                </div>
+                <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">Oresti Vojka</h3>
+                <p style="color: var(--secondary-color); font-weight: 600; margin-bottom: 1rem;">Contributor & Project Coordinator</p>
+                <p>
+                    Oresti worked across the entire project, frequently using HTML, CSS, and JavaScript.
+                    He coordinated the team, monitored progress, and focused strongly on the Ancient Rome section.
+                </p>
+                <div class="team-skills" style="margin-top: 1rem;">
+                    <span style="display: inline-block; background: rgba(193, 154, 107, 0.2); color: var(--primary-color); padding: 0.3rem 0.8rem; border-radius: 20px; margin: 0.3rem; font-size: 0.9rem;">Research</span>
+                    <span style="display: inline-block; background: rgba(42, 157, 143, 0.2); color: var(--secondary-color); padding: 0.3rem 0.8rem; border-radius: 20px; margin: 0.3rem; font-size: 0.9rem;">Content Strategy</span>
+                </div>
+            </div>
+            </a>
+
+            <!-- panajot card -->
+            <a href="../students/panajot.html">
+            <div class="team-card" style="background-color: var(--gray-color); border-radius: 10px; padding: 2rem; text-align: center; transition: var(--transition);">
+                <div class="team-avatar" style="width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-code" style="font-size: 3rem; color: white;"></i>
+                </div>
+                <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">Panagiot Tsipi</h3>
+                <p style="color: var(--secondary-color); font-weight: 600; margin-bottom: 1rem;">Contributor & JavaScript Developer</p>
+                <p>
+                    Panagiot handled most of the JavaScript functionality and focused primarily
+                    on the Ancient Egypt section, adding interactivity and dynamic behavior.
+                </p>
+                <div class="team-skills" style="margin-top: 1rem;">
+                    <span style="display: inline-block; background: rgba(193, 154, 107, 0.2); color: var(--primary-color); padding: 0.3rem 0.8rem; border-radius: 20px; margin: 0.3rem; font-size: 0.9rem;">Frontend</span>
+                    <span style="display: inline-block; background: rgba(42, 157, 143, 0.2); color: var(--secondary-color); padding: 0.3rem 0.8rem; border-radius: 20px; margin: 0.3rem; font-size: 0.9rem;">JavaScript</span>
+                    <span style="display: inline-block; background: rgba(255, 107, 107, 0.2); color: #ff6b6b; padding: 0.3rem 0.8rem; border-radius: 20px; margin: 0.3rem; font-size: 0.9rem;">UX/UI</span>
+                </div>
+            </div>
+            </a>
+
+            <!-- dimitri card -->
+            <a href="../students/dimitri bello.html">
+            <div class="team-card" style="background-color: var(--gray-color); border-radius: 10px; padding: 2rem; text-align: center; transition: var(--transition);">
+                <div class="team-avatar" style="width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-palette" style="font-size: 3rem; color: white;"></i>
+                </div>
+                <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">Dimitri Bello</h3>
+                <p style="color: var(--secondary-color); font-weight: 600; margin-bottom: 1rem;">Contributor & CSS Developer</p>
+                <p>
+                    Dimitri worked mainly on the Illyrians section and was responsible
+                    for most of the CSS styling and visual presentation.
+                </p>
+                <div class="team-skills" style="margin-top: 1rem;">
+                    <span style="display: inline-block; background: rgba(193, 154, 107, 0.2); color: var(--primary-color); padding: 0.3rem 0.8rem; border-radius: 20px; margin: 0.3rem; font-size: 0.9rem;">UI Design</span>
+                    <span style="display: inline-block; background: rgba(42, 157, 143, 0.2); color: var(--secondary-color); padding: 0.3rem 0.8rem; border-radius: 20px; margin: 0.3rem; font-size: 0.9rem;">Visual Identity</span>
+                </div>
+            </div>
+            </a>
+
+            <!-- rajan card -->
+            <a href="../students/rajan.html">
+            <div class="team-card" style="background-color: var(--gray-color); border-radius: 10px; padding: 2rem; text-align: center; transition: var(--transition);">
+                <div class="team-avatar" style="width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-tasks" style="font-size: 3rem; color: white;"></i>
+                </div>
+                <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">Rajan Marinaj</h3>
+                <p style="color: var(--secondary-color); font-weight: 600; margin-bottom: 1rem;">Contributor & Researcher</p>
+                <p>
+                    Rajan focused on research for Ancient Greece and worked extensively with HTML
+                    to structure content and ensure historical accuracy.
+                </p>
+                <div class="team-skills" style="margin-top: 1rem;">
+                    <span style="display: inline-block; background: rgba(193, 154, 107, 0.2); color: var(--primary-color); padding: 0.3rem 0.8rem; border-radius: 20px; margin: 0.3rem; font-size: 0.9rem;">Testing</span>
+                    <span style="display: inline-block; background: rgba(42, 157, 143, 0.2); color: var(--secondary-color); padding: 0.3rem 0.8rem; border-radius: 20px; margin: 0.3rem; font-size: 0.9rem;">Editing</span>
+                </div>
+            </div>
+            </a>
+
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <p>Ages Unveiled &copy; 2025 York City College | Made by QuolyTech group</p> 
+        <p class="footer-note">Educational purpose only</p>
+        <a href="../index.html" class="back-home">
+            <i class="fas fa-arrow-left"></i> Back to Home
+        </a>
+    </div>
+</footer>
+
+<script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oresti Vojka | QuolyTech</title>
+    <style>
+        /* dark academia looks cool */
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:Georgia,serif;background:#0a0a0a;color:#e0e0e0;line-height:1.8;padding:30px;max-width:1000px;margin:auto}
+        
+        /* header hits different */
+        header{text-align:center;padding:60px 0 40px;border-bottom:2px solid #8d6e63;position:relative}
+        header::after{content:"❧";position:absolute;bottom:-15px;left:50%;transform:translateX(-50%);background:#0a0a0a;padding:0 20px;color:#8d6e63;font-size:24px}
+        h1{font-size:3rem;letter-spacing:2px;
+            text-transform:uppercase;
+            margin-bottom:10px;text-shadow:2px 2px 4px rgba(0,0,0,0.5)}
+        .leader-badge{background:linear-gradient(135deg,#5d4037,#3e2723);color:#ffcc80;
+            padding:8px 20px;border-radius:3px;display:inline-block;
+            margin-top:15px;font-family:monospace;border:1px solid #8d6e63}
+        
+        /* main grid - responsive af */
+        .grid{display:grid;grid-template-columns:1fr 1fr;
+            gap:30px;margin:40px 0}
+        @media(max-width:800px){.grid{grid-template-columns:1fr}}
+        
+        /* cards slap */
+        .card{background:#161616;border:1px solid #333;
+            padding:30px;border-radius:5px;box-shadow:0 8px 16px rgba(0,0,0,0.3);transition:transform 0.3s}
+        .card:hover{transform:translateY(-5px)}
+        
+        /* img box - placeholder but make it aesthetic */
+        .img-box{width:200px;height:200px;
+            background:linear-gradient(135deg,#1a1a1a,#2a2a2a);margin:0 auto 20px;display:flex;align-items:center;justify-content:center;color:#888;font-family:monospace;border:2px solid #666;border-radius:5px;font-size:14px}
+        
+        /* typography that slaps */
+        h2{color:#d7ccc8;font-size:1.6rem;margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid #8d6e63}
+        p{margin-bottom:15px;text-align:justify;font-size:1.05rem}
+        ul{list-style:none;padding-left:20px}
+        li{margin-bottom:10px;position:relative;padding-left:20px}
+        li::before{content:"▸";
+        color:#8d6e63;position:absolute;left:0}
+        
+        /* buttons with drip */
+        .btn{background:linear-gradient(to bottom,#5d4037,#3e2723);color:#d7ccc8;border:1px solid #8d6e63;padding:12px 25px;cursor:pointer;margin:5px;border-radius:3px;transition:all 0.3s;font-family:Georgia}
+        .btn:hover{background:linear-gradient(to bottom,#6d5047,#4e3723);transform:translateY(-2px)}
+        
+        /* sections for extra content */
+        .section{margin:40px 0}
+        .quote-box{background:#1a1a1a;border-left:4px solid #8d6e63;padding:20px;margin:20px 0;
+            font-style:italic}
+        .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+            gap:15px;margin-top:15px}
+        .skill-item{background:#222;padding:10px;border-radius:3px;text-align:center;border:1px solid #444}
+        
+        /* footer hits */
+        footer{text-align:center;margin-top:60px;padding-top:30px;border-top:1px solid #333;color:#888;font-family:monospace}
+    </style>
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <h1>Oresti Vojka</h1>
+        <div class="leader-badge">GROUP LEADER</div>
+    </header>
+
+    <!-- main grid -->
+    <div class="grid">
+        <!-- left card - profile + contact -->
+        <div class="card">
+            <img src="../images/orestivojka.jpeg" alt="Oresti Vojka" style="width:200px;height:200px;object-fit:cover;border-radius:5px;">
+            <p>History student, caffeine addict, group dad. Currently translating ancient memes into deadlines.</p>
+            
+            <h2>Contact</h2>
+            <ul>
+                <li>oresti.vojka@quolytech.edu</li>
+                <li>Website: <a href="https://www.quolytech.com" style="color:#8d6e63">www.quolytech.com</a></li>
+                <li>Email: <a href="mailto:orestisvojka@gmail.com" style="color:#8d6e63">orestisvojka@gmail.com</a></li>
+            </ul>
+            
+            <button class="btn" onclick="showQuote()">Random Quote</button>
+            <button class="btn" onclick="darkMode()">Extra Dark</button>
+        </div>
+
+        <!-- right card - actual content -->
+        <div class="card">
+            <h2>What I Actually Do</h2>
+            <p>Keep the group from imploding, translate ancient memes into deadlines, and pretend I know what I'm doing. Basically the human equivalent of a group project safety net.</p>
+            
+            <ul>
+                <li>Lead meetings that could've been emails</li>
+                <li>Make sure Panajot doesn't break prod</li>
+                <li>Translate "I think" into "we will"</li>
+                <li>Keep the Balkan chaos energy in check</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- extra sections to make it longer -->
+    <div class="section">
+        <div class="card">
+            <h2>Skills That Pay Bills</h2>
+            <div class="skills-grid">
+                <div class="skill-item">Ancient History</div>
+                <div class="skill-item">Group Management</div>
+                <div class="skill-item">Deadline Translation</div>
+                <div class="skill-item">Chaos Control</div>
+                <div class="skill-item">Caffeine Consumption</div>
+                <div class="skill-item">Ancient Meme Knowledge</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="card">
+            <h2>Professional Summary</h2>
+            <p><strong>Contributor & Project Coordinator at QuolyTech</strong></p>
+            <p>I worked across the entire project, contributing to both the technical and organizational aspects of development. My role involved combining and reviewing code from all sections, testing functionality, fixing issues, and ensuring consistency across HTML, CSS, and JavaScript.</p>
+            
+            <p>In addition to development, I conducted extensive historical research, verified content accuracy, and helped structure information in a clear and engaging way. I coordinated the team, monitored progress, and made sure deadlines and project goals were met, with a strong focus on the Ancient Rome section.</p>
+            
+            <p>I was also responsible for reviewing final outputs, testing interactions, and making sure all parts of the website worked smoothly together as one complete product.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="card">
+            <h2>Philosophy</h2>
+            <div class="quote-box">
+                "If it works, it works. If it doesn't work, we'll make it work. And if we can't make it work, we'll pretend it works until someone else figures it out."
+            </div>
+            <p>My approach to leadership is simple: keep the vibes high, the coffee flowing, and the group chat alive. Ancient civilizations didn't build themselves, and neither do modern websites.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="card">
+            <h2>Fun Facts</h2>
+            <ul>
+                <li>Can recite the entire Roman emperor timeline from memory</li>
+                <li>Once survived on nothing but coffee and vibes for 72 hours</li>
+                <li>Has a collection of ancient history memes that would make historians cry</li>
+                <li>Believes that every problem can be solved with either coffee or a timeline</li>
+                <li>Thinks that group projects are just modern-day gladiator arenas</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer>
+        <p>© 2026 QuolyTech • vibes over grades</p>
+        <p style="margin-top:10px;font-size:0.9em">"Lorem ipsum dolor sit amet, consectetur adipiscing elit." - probably what I say in meetings</p>
+    </footer>
+
+    <script>
+        // random quote generator bc why not
+        function showQuote() {
+            const quotes = [
+                "vibes over grades fr fr",
+                "if it works it works",
+                "google is free",
+                "sleep is for the weak",
+                "deadline? never heard of her"
+            ];
+            alert(quotes[Math.floor(Math.random() * quotes.length)]);
+        }
+
+        // dark mode toggle (extra dark)
+        function darkMode() {
+            document.body.style.background = '#000';
+            document.body.style.color = '#999';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dimitri Bello | QuolyTech</title>
+    <style>
+        /*
+        Matrix theme because why not?
+        
+        */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #0a0a0a;
+            color: #00ff41;
+            line-height: 1.6;
+            overflow-x: hidden;
+            padding: 20px;
+        }
+        
+        /* Matrix rain effect in background */
+        .matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+        
+        .matrix-char {
+            position: absolute;
+            color: #00ff41;
+            font-size: 14px;
+            animation: fall linear infinite;
+        }
+        
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            border: 1px solid #003b00;
+            padding: 30px;
+            background-color: rgba(10, 15, 10, 0.9);
+            box-shadow: 0 0 30px rgba(0, 255, 65, 0.1);
+            position: relative;
+        }
+        
+        /* Glitch effect for container */
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #00ff41, #003b00, #00ff41, #003b00);
+            z-index: -1;
+            animation: glitch 3s infinite;
+            opacity: 0.3;
+        }
+        
+        @keyframes glitch {
+            0%, 100% { opacity: 0.1; }
+            50% { opacity: 0.3; }
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #003b00;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: #00ff41;
+            text-shadow: 0 0 10px rgba(0, 255, 65, 0.7);
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+        }
+        
+        .title-annotation {
+            color: #008f11;
+            font-size: 1rem;
+            margin-top: 10px;
+            font-style: italic;
+        }
+        
+        .ascii-art {
+            font-family: monospace;
+            white-space: pre;
+            color: #008f11;
+            margin: 30px 0;
+            font-size: 8px;
+            line-height: 1;
+            text-align: center;
+        }
+        
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        
+        .section {
+            padding: 20px;
+            border: 1px solid #003b00;
+            background-color: rgba(15, 20, 15, 0.7);
+            transition: all 0.3s;
+        }
+        
+        .section:hover {
+            border-color: #00ff41;
+            box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);
+        }
+        
+        h2 {
+            color: #00ff41;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            border-bottom: 1px solid #003b00;
+            padding-bottom: 10px;
+        }
+        
+        h2::before {
+            content: "> ";
+            color: #008f11;
+        }
+        
+        .profile-area {
+            text-align: center;
+            padding: 30px;
+            border: 1px dashed #003b00;
+        }
+        
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            background-color: #001a00;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #008f11;
+            border: 2px solid #003b00;
+            font-size: 12px;
+            font-family: 'Courier New', monospace;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .profile-img::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                transparent 30%,
+                rgba(0, 255, 65, 0.1) 50%,
+                transparent 70%
+            );
+            animation: scan 3s linear infinite;
+        }
+        
+        @keyframes scan {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        p {
+            margin-bottom: 15px;
+            color: #00cc33;
+            font-size: 1.05rem;
+        }
+        
+        .code-block {
+            background-color: #001500;
+            border: 1px solid #003b00;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: #00ff41;
+            white-space: pre-wrap;
+            position: relative;
+        }
+        
+        .code-block::before {
+            content: '// code_snippet.v3';
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            background-color: #001500;
+            padding: 0 10px;
+            color: #008f11;
+            font-size: 0.8rem;
+        }
+        
+        .lorem-text {
+            color: #00aa33;
+            font-style: italic;
+            line-height: 1.7;
+            background-color: rgba(0, 20, 0, 0.3);
+            padding: 15px;
+            border-left: 3px solid #003b00;
+        }
+        
+        .interaction-panel {
+            background-color: #001500;
+            padding: 25px;
+            margin-top: 20px;
+            border: 1px solid #003b00;
+            text-align: center;
+        }
+        
+        .btn {
+            background-color: #002200;
+            color: #00ff41;
+            border: 1px solid #003b00;
+            padding: 12px 25px;
+            font-family: 'Courier New', monospace;
+            cursor: pointer;
+            margin: 0 10px;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            background-color: #003300;
+            box-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+            border-color: #00ff41;
+        }
+        
+        .terminal-output {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #001100;
+            border: 1px solid #003b00;
+            color: #00ff41;
+            font-family: 'Courier New', monospace;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        
+        .terminal-output::before {
+            content: "user@quolytech:~$ ";
+            color: #008f11;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid #003b00;
+            color: #008f11;
+            font-size: 0.9rem;
+        }
+        
+        .blink {
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+                margin: 20px auto;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .btn {
+                display: block;
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Matrix background effect -->
+    <div class="matrix-bg" id="matrixBg"></div>
+    
+    <div class="container">
+        <header class="header">
+            <h1 id="mainTitle">>DIMITRI_BELLO</h1>
+            <div class="title-annotation">QUOLYTECH_DEV // SIMPLICITY_MODULE</div>
+            
+            <div class="ascii-art" id="asciiArt">
+                <!--THANKS ORESTI FOR THIS LIITLE BIT COOL ANIMATION LOL-->
+  _____  ___  __  __  _____  ___  _____ 
+ |  __ \|_  ||  \/  ||_   _|/ _ \|_   _|
+ | |  | | | || .  . |  | | | | | | | |  
+ | |  | | | || |\/| |  | | | | | | | |  
+ | |__| / / || |  | | _| |_| |_| |_| |_ 
+ |_____/___||_|  |_||_____|\___/|_____|
+            </div>
+        </header>
+        
+        <main class="content">
+            <div class="section">
+                <div class="profile-area">
+                    <img src="../images/dimitribello.jpeg" alt="Dimitri Bello" size="180x180" style="width:180px;height:180px;object-fit:cover;border-radius:50%;border:2px solid #003b00;">
+                        <!-- Honestly I should put a real photo here -->
+                        <!-- But this placeholder has that hacker vibe -->
+                        [USER_IMAGE]
+                        <br>LOADING...
+                    </div>
+                    <p>> PROFILE_STATUS: ACTIVE</p>
+                    <p>> ROLE: BACKEND_ARCHITECT</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>USER_PROFILE</h2>
+                <p>> Dimitri Bello, The designer of the project</p>
+                <p>> Current focus: Database optimization and API architecture.</p>
+                
+                <div class="lorem-text">
+                    I worked mainly on the visual side of the project, focusing on CSS styling and layout design. My role involved improving the structure, colors, spacing, and overall appearance of the website to make it clear, readable, and visually consistent.
+                </div>
+                
+                <div class="code-block">
+// System configuration file
+const userConfig = {
+    name: "Dimitri Bello",
+    role: "Backend Architect",
+    skills: ["Database Design", "API Development", "System Architecture"],
+    status: "Active",
+    project: "QuolyTech",
+    philosophy: "Simple solutions for complex problems"
+};
+
+export default userConfig;
+<!--Thanks to Oresti Again for this cool idea and help me build this animation LOL-->
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>SYSTEM_OUTPUT</h2>
+                <p>> Current project status and system information.</p>
+                
+                <div class="lorem-text">
+                   I styled multiple sections of the project, paying special attention to alignment, typography, and responsive design. I also collaborated with the rest of the team to ensure that the design worked smoothly with the HTML content and JavaScript functionality.
+                <div class="interaction-panel">
+                    <p>> SYSTEM_INTERFACE_READY</p>
+                    <button class="btn" id="runBtn">RUN_DIAGNOSTICS</button>
+                    <button class="btn" id="clearBtn">CLEAR_OUTPUT</button>
+                    <button class="btn" id="loremBtn">GENERATE_LOREM</button>
+                    
+                    <div class="terminal-output" id="terminalOutput">
+                        Welcome to Dimitri's system interface.
+                        Type 'help' for available commands.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>PROJECT_CONTRIBUTIONS</h2>
+                <p>> Primary responsibilities in QuolyTech project.</p>
+                
+                <div class="lorem-text">
+                    My contribution helped improve the user experience and gave the project a more polished and professional look.
+                </div>
+                
+                <div class="code-block">
+// Current tasks
+const currentTasks = [
+    "Database schema optimization",
+    "REST API endpoint development",
+    "Authentication system implementation",
+    "System documentation",
+    "Code review for team members"
+];
+
+console.log(`Tasks remaining: ${currentTasks.length}`);
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>> SYSTEM: ONLINE | USER: DIMITRI_BELLO | PROJECT: QUOLYTECH</p>
+            <p class="blink">_</p>
+        </footer>
+    </div>
+
+    <script>
+        // Matrix background effect
+        // This is kinda hacky but it looks cool
+        const matrixBg = document.getElementById('matrixBg');
+        const chars = "01";
+        
+        function createMatrix() {
+            for (let i = 0; i < 100; i++) {
+                const char = document.createElement('div');
+                char.className = 'matrix-char';
+                char.textContent = chars[Math.floor(Math.random() * chars.length)];
+                char.style.left = Math.random() * 100 + 'vw';
+                char.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                char.style.animationDelay = Math.random() * 5 + 's';
+                matrixBg.appendChild(char);
+            }
+        }
+        
+        createMatrix();
+        
+        // ASCII art animation
+        const asciiArt = document.getElementById('asciiArt');
+        const originalAscii = asciiArt.textContent;
+        
+        // Terminal functionality
+        const runBtn = document.getElementById('runBtn');
+        const clearBtn = document.getElementById('clearBtn');
+        const loremBtn = document.getElementById('loremBtn');
+        const terminalOutput = document.getElementById('terminalOutput');
+        
+        runBtn.addEventListener('click', function() {
+            terminalOutput.style.display = 'block';
+            const lines = [
+                "> Running system diagnostics...",
+                "> Checking database connections... OK",
+                "> Verifying API endpoints... OK",
+                "> Testing authentication system... OK",
+                "> Scanning for security vulnerabilities... 0 found",
+                "> System status: OPTIMAL",
+                "> All systems functioning within normal parameters."
+            ];
+            
+            let output = '';
+            lines.forEach((line, index) => {
+                setTimeout(() => {
+                    output += line + '\n';
+                    terminalOutput.textContent = output;
+                    terminalOutput.scrollTop = terminalOutput.scrollHeight;
+                }, index * 300);
+            });
+            
+            // Add blinking cursor at the end
+            setTimeout(() => {
+                terminalOutput.textContent = output + '_';
+                setInterval(() => {
+                    if (terminalOutput.textContent.endsWith('_')) {
+                        terminalOutput.textContent = output;
+                    } else {
+                        terminalOutput.textContent = output + '_';
+                    }
+                }, 500);
+            }, lines.length * 300);
+        });
+        
+        clearBtn.addEventListener('click', function() {
+            terminalOutput.style.display = 'none';
+            terminalOutput.textContent = "Welcome to Dimitri's system interface.\nType 'help' for available commands.";
+        });
+        
+        loremBtn.addEventListener('click', function() {
+            terminalOutput.style.display = 'block';
+            const lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
+            
+            terminalOutput.textContent = "> Generating lorem ipsum...\n\n" + lorem + "\n\n_";
+            
+            // Make the terminal output scroll to bottom
+            terminalOutput.scrollTop = terminalOutput.scrollHeight;
+        });
+        
+        // Typewriter effect for title
+        const title = document.getElementById('mainTitle');
+        const originalTitle = title.textContent;
+        title.textContent = '';
+        
+        let i = 0;
+        function typeTitle() {
+            if (i < originalTitle.length) {
+                title.textContent += originalTitle.charAt(i);
+                i++;
+                setTimeout(typeTitle, 100);
+            } else {
+                // Add blinking cursor
+                setInterval(() => {
+                    if (title.textContent.endsWith('_')) {
+                        title.textContent = originalTitle;
+                    } else {
+                        title.textContent = originalTitle + '_';
+                    }
+                }, 500);
+            }
+        }
+        
+        // ASCII art glitch effect
+        function glitchAscii() {
+            const lines = originalAscii.split('\n');
+            let glitched = '';
+            
+            lines.forEach(line => {
+                let glitchedLine = '';
+                for (let char of line) {
+                    if (Math.random() > 0.95) {
+                        glitchedLine += chars[Math.floor(Math.random() * chars.length)];
+                    } else {
+                        glitchedLine += char;
+                    }
+                }
+                glitched += glitchedLine + '\n';
+            });
+            
+            asciiArt.textContent = glitched;
+        }
+        
+        // Initialize everything when page loads
+        window.addEventListener('load', function() {
+            console.log("Dimitri's system online...");
+            typeTitle();
+            
+            // Start ASCII glitch effect
+            setInterval(glitchAscii, 100);
+            
+            // Random system log
+            setTimeout(() => {
+                console.log("> Backend systems initialized");
+                console.log("> Database connection established");
+                console.log("> API endpoints ready");
+            }, 1000);
+        });
+        
+        // Add some interactivity to sections
+        const sections = document.querySelectorAll('.section');
+        sections.forEach(section => {
+            section.addEventListener('click', function() {
+                this.style.borderColor = '#00ff41';
+                this.style.boxShadow = '0 0 20px rgba(0, 255, 65, 0.3)';
+                
+                setTimeout(() => {
+                    this.style.borderColor = '';
+                    this.style.boxShadow = '';
+                }, 300);
+            });
+        });
+        
+        // Easter egg: Konami code
+        let konamiCode = [];
+        const konamiSequence = [
+            'ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown',
+            'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight',
+            'b', 'a'
+        ];
+        
+        document.addEventListener('keydown', (e) => {
+            konamiCode.push(e.key);
+            if (konamiCode.length > konamiSequence.length) {
+                konamiCode.shift();
+            }
+            
+            if (konamiCode.join('') === konamiSequence.join('')) {
+                alert("SECRET UNLOCKED: You found the Konami code!\n\nSystem override initiated... Just kidding.");
+                konamiCode = [];
+            }
+        });
+    </script>
+</body>
+</html>
